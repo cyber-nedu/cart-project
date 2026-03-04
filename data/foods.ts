@@ -1,0 +1,122 @@
+export const foods = [
+  {
+    id: 1,
+    name: "Beans",
+    price: 12,
+    image: "/images/beans.JPG",
+  },
+  {
+    id: 2,
+    name: "Rice",
+    price: 18,
+    image: "/images/rice.JPG",
+  },
+  {
+    id: 3,
+    name: "Fried Rice",
+    price: 15,
+    image: "/images/friedrice.JPG",
+  },
+  {
+    id: 4,
+    name: "Turkey",
+    price: 14,
+    image: "/images/turkey.JPG",
+  },
+  {
+    id: 5,
+    name: "Nkowbi",
+    price: 10,
+    image: "/images/nkowbi.JPG",
+  },
+  {
+    id: 6,
+    name: "Egusi Soup",
+    price: 20,
+    image: "/images/egusi.JPG",
+  },
+  {
+    id: 7,
+    name: "Bitterleaf Soup",
+    price: 25,
+    image: "/images/bitterleaf-soup.JPG",
+  },
+  {
+    id: 8,
+    name: "Canda-Meat",
+    price: 30,
+    image: "/images/canda.JPG",
+  },
+  {
+    id: 9,
+    name: "Yam",
+    price: 18,
+    image: "/images/yam.JPG",
+  },
+  {
+    id: 10,
+    name: "Meat-Pie",
+    price: 20,
+    image: "/images/meatpie.JPG",
+  },
+  {
+    id: 11,
+    name: "Plantain",
+    price: 8,
+    image: "/images/plantain.JPG",
+  },
+  {
+    id: 12,
+    name: "Egg-Stew",
+    price: 22,
+    image: "/images/egg-stew.JPG",
+  },
+  {
+    id: 13,
+    name: "Croker-Fish",
+    price: 18,
+    image: "/images/croker-fish.JPG",
+  },
+  {
+    id: 14,
+    name: "Poridge-Yam",
+    price: 25,
+    image: "/images/porage.JPG",
+  },
+  {
+    id: 15,
+    name: "Coconut-Rice",
+    price: 30,
+    image: "/images/coconut-rice.JPG",
+  },
+  {
+    id: 16,
+    name: "Bole",
+    price: 20,
+    image: "/images/bole.JPG",
+  },
+  {
+    id: 17,
+    name: "Chicken",
+    price: 18,
+    image: "/images/chicken.JPG",
+  },
+  {
+    id: 18,
+    name: "Fish and Chips",
+    price: 22,
+    image: "/images/fish.JPG",
+  },
+  {
+    id: 19,
+    name: "Salad",
+    price: 25,
+    image: "/images/salad.JPG",
+  },
+  {
+    id: 20,
+    name: "Suya",
+    price: 30,
+    image: "/images/suya.JPG",
+  }
+];
