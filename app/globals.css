@@ -20,13 +20,26 @@ transform:translateY(0);
 }
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(60px);
-  transition:all 0.9s ease;
+@keyframes fadeIn {
+  from { opacity:0 }
+  to { opacity:1 }
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+@keyframes scaleIn {
+  from {
+    transform: scale(.8);
+    opacity:0
+  }
+  to {
+    transform: scale(1);
+    opacity:1
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn .3s ease forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn .3s ease forwards;
 }

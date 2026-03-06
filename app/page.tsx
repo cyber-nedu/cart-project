@@ -2,26 +2,14 @@
 
 import { foods } from "../data/foods";
 import FoodCard from "../components/FoodCard";
+import { useState } from "react";
 
 export default function Home() {
+  const [search, setSearch] = useState("");
 
-
-  if (typeof window !== "undefined") {
-    const reveal = () => {
-      const elements = document.querySelectorAll(".reveal")
-
-      elements.forEach((el) => {
-        const top = el.getBoundingClientRect().top
-        const windowHeight = window.innerHeight
-
-        if (top < windowHeight - 100) {
-          el.classList.add("active")
-        }
-      })
-    }
-
-    window.addEventListener("scroll", reveal)
-  }
+  const filteredFoods = foods.filter((food) =>
+    food.name.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <>
       <div className="overflow-x-hidden">
@@ -134,9 +122,18 @@ export default function Home() {
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-slate-900">Popular Dishes</h2>
               <div className="h-1 w-20 bg-orange-500 mt-2" />
+              <div>
+                <input
+                  type="text"
+                  placeholder="Search dishes..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="mt-4 w-full max-w-md px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {foods.map((food) => (
+
+              {filteredFoods.map((food) => (
                 <FoodCard key={food.id} food={food} />
               ))}
             </div>

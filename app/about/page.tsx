@@ -1,7 +1,7 @@
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <section className="relative pt-32 pb-20 overflow-hidden">
+    <main className="min-h-screen bg-white m-0">
+      <section className="relative pt-12 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative z-10">
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-orange-500 uppercase bg-orange-500/10 border border-orange-500/20 rounded-full">
