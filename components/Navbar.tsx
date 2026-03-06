@@ -97,7 +97,7 @@ export default function Navbar() {
       {cartOpen && <CartModal close={() => setCartOpen(false)} />}
 
       {emptyCartWarning && (        
-        <div className=" inset-0 z-2 flex items-center justify-center bg-black/60 backdrop-blur-md animate-in fade-in duration-300 h-screen">
+        <div className=" inset-0 z-2 flex items-center justify-center bg-orange-500 backdrop-blur-md animate-in fade-in duration-300 h-screen">
 
           <div className="relative bg-white w-full max-w-[340px] p-8 rounded-2xl shadow-2xl text-center mx-4 transform transition-all animate-in zoom-in-95 slide-in-from-bottom-8 duration-500 ease-out">
 

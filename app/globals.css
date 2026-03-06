@@ -1,3 +1,32 @@
 @import "tailwindcss";
 
+    html {
+    scroll-behavior: smooth;
+  }
   
+
+body{
+animation:fadePage 0.7s ease;
+}
+
+@keyframes fadePage{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 0.9s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}

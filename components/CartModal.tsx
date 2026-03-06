@@ -8,9 +8,11 @@ export default function CartModal({ close }: { close: () => void }) {
   const { cart, removeFromCart, totalPrice } = useCart();
   const [orderOpen, setOrderOpen] = useState(false);
 
+
   return (
     <>
-      <div className="fixed inset-0 z-[100] flex justify-end bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
+      
+      <div className="fixed  inset-0 z-[100] flex justify-end bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
 
         <div className="bg-white w-full max-w-md h-screen shadow-2xl flex flex-col transform transition-all animate-in slide-in-from-right duration-500 ease-out">
 
@@ -36,7 +38,7 @@ export default function CartModal({ close }: { close: () => void }) {
                     <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                   </div>
 
-                  <div className="flex flex-col justify-between flex-grow">
+                  <div className="flex  justify-between flex-grow">
                     <div>
                       <h3 className="font-semibold text-slate-800">{item.name}</h3>
                       <p className="text-sm text-slate-500">{item.quantity} x ${item.price.toFixed(2)}</p>

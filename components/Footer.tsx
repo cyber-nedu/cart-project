@@ -1,4 +1,10 @@
-import { Icon } from "lucide-react";
+import { Github, Instagram, TwitterIcon, Youtube } from "lucide-react";
+const icons = [
+  { icon: <Github />, url: "https://cyber-nedu" },
+  { icon: <Instagram />, url: "https://www.instagram.com/cyber_nedu/" },
+  { icon: <TwitterIcon />, url: "https://twitter.com/cyber_nedu" },
+  { icon: <Youtube />, url: "https://www.youtube.com/@cybernedu" },
+];
 
 export default function Footer() {
   return (
@@ -12,13 +18,19 @@ export default function Footer() {
             <p className="text-slate-500 max-w-xs leading-relaxed">
               Bringing the best flavors from local kitchens straight to your doorstep. Freshness guaranteed in every bite.
             </p>
-            <div className="flex gap-4">
-              {['fb', 'tw', 'ig', 'yt'].map((social) => (
-                <div key={social} className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all cursor-pointer">
-                  <span className="text-xs font-bold uppercase">{social}</span>
-                </div>
-              ))}
-            </div>
+          <div className="flex gap-4">
+            {icons.map(({ icon, url }, index) => (
+              <a
+                key={index}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 hover:text-slate-900 transition-colors cursor-pointer"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
           </div>
 
           <div>

@@ -1,19 +1,19 @@
 export const foods = [
   {
     id: 1,
-    name: "Beans",
+    name: "Porridge-Beans",
     price: 12,
     image: "/images/beans.JPG",
   },
   {
     id: 2,
-    name: "Rice",
+    name: "Chinese-Rice",
     price: 18,
     image: "/images/rice.JPG",
   },
   {
     id: 3,
-    name: "Fried Rice",
+    name: "Fried-Rice & Chicken",
     price: 15,
     image: "/images/friedrice.JPG",
   },
@@ -49,15 +49,15 @@ export const foods = [
   },
   {
     id: 9,
-    name: "Yam",
+    name: "Ogbonno-Soup",
     price: 18,
-    image: "/images/yam.JPG",
+    image: "/images/ogbono.JPG",
   },
   {
     id: 10,
     name: "Meat-Pie",
     price: 20,
-    image: "/images/meatpie.JPG",
+    image: "/images/meatpie3.JPG",
   },
   {
     id: 11,
@@ -79,7 +79,7 @@ export const foods = [
   },
   {
     id: 14,
-    name: "Poridge-Yam",
+    name: "Porridge-Yam",
     price: 25,
     image: "/images/porage.JPG",
   },
@@ -97,13 +97,13 @@ export const foods = [
   },
   {
     id: 17,
-    name: "Chicken",
+    name: "Fried-Chicken",
     price: 18,
     image: "/images/chicken.JPG",
   },
   {
     id: 18,
-    name: "Fish and Chips",
+    name: "Barbique-Fish",
     price: 22,
     image: "/images/fish.JPG",
   },
@@ -118,5 +118,29 @@ export const foods = [
     name: "Suya",
     price: 30,
     image: "/images/suya.JPG",
+  },
+  {
+    id: 21,
+    name: "Afang-Soup",
+    price: 18,
+    image: "/images/afang.JPG",
+  },
+  {
+    id: 22,
+    name: "Beans",
+    price: 22,
+    image: "/images/white-beans.JPG",
+  },
+  {
+    id: 23,
+    name: "Catfish-Pepper Soup",
+    price: 25,
+    image: "/images/catfish.JPG",
+  },
+  {
+    id: 24, 
+    name: "Jollof-Rice and Chicken",
+    price: 30,
+    image: "/images/jollof-chicken.JPG",
   }
 ];

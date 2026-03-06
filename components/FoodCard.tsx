@@ -1,6 +1,7 @@
 "use client";
 
 import { useCart } from "../context/CardContext";
+
 export default function FoodCard({ food }: { food: { id: number; name: string; price: number; image: string } }) {
   const { addToCart } = useCart();
 
@@ -15,9 +16,9 @@ export default function FoodCard({ food }: { food: { id: number; name: string; p
       <p className="text-gray-600">${food.price}</p>
       <button
         onClick={() => addToCart(food)}
-        className="mt-4 w-full bg-orange-400 text-white py-2 rounded-lg hover:bg-orange-500 transition"
+        className="flex items-center justify-center gap-2 w-full bg-orange-400 text-white py-2 rounded-lg hover:bg-orange-500 transition"
       >
-        Add to Cart
+       <img src="/images/cart.png" alt=" Cart-icon" /> Add to Cart
       </button>
     </div>
   );

@@ -4,15 +4,33 @@ import { foods } from "../data/foods";
 import FoodCard from "../components/FoodCard";
 
 export default function Home() {
+
+
+  if (typeof window !== "undefined") {
+    const reveal = () => {
+      const elements = document.querySelectorAll(".reveal")
+
+      elements.forEach((el) => {
+        const top = el.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+
+        if (top < windowHeight - 100) {
+          el.classList.add("active")
+        }
+      })
+    }
+
+    window.addEventListener("scroll", reveal)
+  }
   return (
     <>
       <div className="overflow-x-hidden">
         <section className="relative min-h-[80vh] flex items-center bg-white">
-          <div className="absolute top-0 right-0 -z-10 w-[50%] h-full bg-orange-50/50 rounded-bl-[100px] hidden lg:block animate-in fade-in duration-1000" />
+          <div className="absolute top-0 right-0 -z-10 w-[50%] h-full bg-orange-50/50 rounded-bl-[100px] hidden lg:block " />
 
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full ">
 
-            <div className="space-y-8 animate-in slide-in-from-left duration-700 ease-out">
+            <div className="space-y-8">
               <div className="inline-flex items-center space-x-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-bold tracking-wide uppercase">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
@@ -41,7 +59,7 @@ export default function Home() {
                 </button>
               </div>
 
-              <div className="flex items-center gap-6 pt-4 border-t border-slate-100">
+              <div className="flex items-center gap-6 pt-4 border-t border-slate-100 reveal">
                 <div>
                   <p className="text-2xl font-bold">5k+</p>
                   <p className="text-sm text-slate-500">Happy Customers</p>
@@ -54,29 +72,47 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative flex justify-center items-center animate-in zoom-in-75 duration-1000">
-              <div className="relative w-full max-w-[500px] aspect-square animate-bounce-slow">
-                <div className="w-full h-full bg-gradient-to-tr from-orange-100 to-orange-50 rounded-full overflow-hidden shadow-2xl border-[12px] border-white">
+            <div className="relative flex justify-center items-center">
+              <style>{`
+    @keyframes slowFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    .animate-float {
+      animation: slowFloat 5s ease-in-out infinite;
+    }
+  `}</style>
+
+              <div className="relative w-full max-w-[500px] aspect-square animate-float">
+                <div className="w-full h-full bg-gradient-to-tr from-orange-200 via-white to-orange-50 rounded-full overflow-hidden shadow-2xl border-[12px] border-white relative group">
                   <img
                     src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
                     alt="Delicious Bowl"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+
+                  <div className="absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(0,0,0,0.05)] pointer-events-none" />
                 </div>
 
-                <div className="absolute top-10 -left-6 bg-white p-4 rounded-2xl shadow-xl animate-float">
-                  <p className="text-orange-500 font-bold">🔥 Hot Deals</p>
+                <div className="absolute top-10 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-orange-100 transition-all duration-500 hover:-translate-y-2 cursor-default">
+                  <p className="text-orange-500 font-bold flex items-center gap-2">
+                    <span className="animate-pulse">🔥</span> Hot Deals
+                  </p>
                 </div>
 
-                <div className="absolute bottom-10 -right-6 bg-white p-4 rounded-2xl shadow-xl animate-float-delayed">
-                  <p className="text-green-500 font-bold">🥗 100% Healthy</p>
+                <div className="absolute bottom-10 -right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-green-100 transition-all duration-500 hover:-translate-y-2 cursor-default">
+                  <p className="text-green-500 font-bold flex items-center gap-2">
+                    <span>🥗</span> 100% Healthy
+                  </p>
                 </div>
+
+                <div className="absolute -inset-4 bg-orange-400/10 rounded-full blur-3xl -z-10 animate-pulse" />
               </div>
             </div>
           </div>
-        </section>
+        </section> <br /><br />
 
-        <section className="bg-slate-900 py-12">
+        <section className="bg-slate-900 py-12 ">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { label: 'Free Delivery', icon: '🚚' },
@@ -92,8 +128,9 @@ export default function Home() {
           </div>
         </section>
 
+
         <section className="bg-gray-50 py-20">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6 ">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-slate-900">Popular Dishes</h2>
               <div className="h-1 w-20 bg-orange-500 mt-2" />
@@ -107,13 +144,11 @@ export default function Home() {
         </section>
       </div>
 
-      {/* --- WHY CHOOSE US SECTION --- */}
       <section className="py-24 bg-white relative overflow-hidden">
-        {/* Subtitle Background Decoration */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-24 h-64 bg-orange-100/30 blur-3xl rounded-full" />
 
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 ">
             <h3 className="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3">Our Features</h3>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
               Why We Are The Best <br className="hidden md:block" /> In <span className="text-orange-500 underline decoration-orange-200 underline-offset-8">Food Delivery</span>
@@ -121,7 +156,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Card 1 */}
+
             <div className="group p-10 rounded-[32px] bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">
                 🛵
@@ -132,7 +167,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Card 2 */}
             <div className="group p-10 rounded-[32px] bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
               <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">
                 🌱
@@ -143,7 +177,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Card 3 */}
             <div className="group p-10 rounded-[32px] bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
               <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">
                 📱
@@ -214,11 +247,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- HOW IT WORKS SECTION --- */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Section Header */}
           <div className="text-center mb-20">
             <h3 className="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3">Step by Step</h3>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
@@ -226,14 +257,11 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Steps Container */}
           <div className="relative">
-            {/* Decorative Connecting Line (Desktop Only) */}
             <div className="hidden lg:block absolute top-24 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-dashed bg-slate-200 border-t-2 border-dashed border-slate-200" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-              {/* Step 1 */}
               <div className="relative flex flex-col items-center text-center group">
                 <div className="w-20 h-20 bg-orange-50 rounded-3xl flex items-center justify-center text-3xl mb-6 border-2 border-transparent group-hover:border-orange-500 group-hover:bg-white transition-all duration-300 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2">
                   📍
@@ -245,7 +273,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Step 2 */}
               <div className="relative flex flex-col items-center text-center group">
                 <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center text-3xl mb-6 border-2 border-transparent group-hover:border-blue-500 group-hover:bg-white transition-all duration-300 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2">
                   🍔
@@ -257,7 +284,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Step 3 */}
               <div className="relative flex flex-col items-center text-center group">
                 <div className="w-20 h-20 bg-purple-50 rounded-3xl flex items-center justify-center text-3xl mb-6 border-2 border-transparent group-hover:border-purple-500 group-hover:bg-white transition-all duration-300 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2">
                   💳
@@ -269,7 +295,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Step 4 */}
               <div className="relative flex flex-col items-center text-center group">
                 <div className="w-20 h-20 bg-green-50 rounded-3xl flex items-center justify-center text-3xl mb-6 border-2 border-transparent group-hover:border-green-500 group-hover:bg-white transition-all duration-300 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2">
                   🏠
@@ -286,19 +311,19 @@ export default function Home() {
         </div>
       </section>
 
-      #<section className="py-24 bg-gray-50/50 overflow-hidden">
+      <section className="py-24 bg-gray-50/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-xl">
-              <h3 className="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3">Community Love</h3>
+              <h3 className="text-orange-500 font-bold uppercase tracking-widest text-sm mb-3 ">Community Love</h3>
               <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                 Join <span className="text-orange-500">10,000+</span> Happy <br /> Daily Foodies
               </h2>
             </div>
             <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100">
               <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
+                {[1, 2, 3, 4,].map((i) => (
                   <img key={i} className="w-10 h-10 rounded-full border-2 border-white" src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="User" />
                 ))}
               </div>
@@ -309,12 +334,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 group animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 group animate-in fadeIn slide-in-from-bottom-4 ">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=1" alt="User" />
+                  <img src="https://i.pravatar.cc/150?u=1" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Sarah Jenkins</h4>
@@ -369,7 +394,7 @@ export default function Home() {
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=4" alt="User" />
+                  <img src="https://i.pravatar.cc/150?u=4" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">David Chen</h4>
@@ -387,7 +412,7 @@ export default function Home() {
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=5" alt="User" />
+                  <img src="https://i.pravatar.cc/150?u=5" alt="User" width={48} height={48} /> 
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Aisha Khan</h4>
@@ -405,7 +430,7 @@ export default function Home() {
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=6" alt="User" />
+                  <img src="https://i.pravatar.cc/150?u=6" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">James Wilson</h4>
@@ -423,7 +448,7 @@ export default function Home() {
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=7" alt="User" />
+                  <img src="https://i.pravatar.cc/150?u=7" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Sofia G.</h4>
