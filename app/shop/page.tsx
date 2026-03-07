@@ -554,10 +554,6 @@ export default function Shop() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredFoods.map((food) => (
             <div
-              // key={food.id}
-              // className="group bg-white rounded-[2.5rem] p-4 pb-8 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(255,115,0,0.15)] border border-transparent hover:border-orange-100 flex flex-col h-full"
-
-
               key={food.id}
               onClick={() => setSelectedFood(food)}
               className="cursor-pointer group bg-white rounded-[2.5rem] p-4 pb-8 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(255,115,0,0.15)] border border-transparent hover:border-orange-100 flex flex-col h-full"
@@ -591,12 +587,6 @@ export default function Shop() {
                     <span className="text-xs text-slate-400 line-through">$ {food.price + 5}</span>
                     <span className="text-2xl font-black text-slate-900">${food.price}</span>
                   </div>
-                  {/* 
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    addToCart(food);
-                  }} */}
 
                   <button
                     onClick={(e) => {

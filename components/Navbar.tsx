@@ -83,7 +83,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`text-lg font-medium ${isActive ? "text-black" : "text-gray-500"
+
+                  className={`text-lg font-medium border-b-2 ${isActive ? "text-white bg-orange-500 px-2 rounded-lg" : "text-gray-500 border-transparent"
                     }`}
                 >
                   {link.name}
