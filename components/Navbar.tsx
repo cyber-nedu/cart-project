@@ -51,7 +51,7 @@ export default function Navbar() {
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-black rounded-full"></span>
+                    <span className="absolute left-0 -bottom-1 w-full h-2px] bg-black rounded-full"></span>
                   )}
                 </Link>
               );
@@ -119,7 +119,7 @@ export default function Navbar() {
             </h2>
 
             <p className="mt-3 text-slate-500 leading-relaxed">
-              Looks like you haven't added anything to your bag yet.
+              Looks like you havent added anything to your bag yet.
             </p>
 
             <button

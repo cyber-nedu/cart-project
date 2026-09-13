@@ -3,6 +3,7 @@
 import { foods } from "../data/foods";
 import FoodCard from "../components/FoodCard";
 import { useState } from "react";
+import Image from "next/image";
 
 
 export default function HomeClient() {
@@ -74,7 +75,7 @@ export default function HomeClient() {
 
               <div className="relative w-full max-w-[500px] aspect-square animate-float">
                 <div className="w-full h-full bg-gradient-to-tr from-orange-200 via-white to-orange-50 rounded-full overflow-hidden shadow-2xl border-[12px] border-white relative group">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
                     alt="Delicious Bowl"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -322,7 +323,7 @@ export default function HomeClient() {
             <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4,].map((i) => (
-                  <img key={i} className="w-10 h-10 rounded-full border-2 border-white" src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="User" />
+                  <Image key={i} className="w-10 h-10 rounded-full border-2 border-white" src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="User" />
                 ))}
               </div>
               <div className="ml-4">
@@ -337,7 +338,7 @@ export default function HomeClient() {
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 group animate-in fadeIn slide-in-from-bottom-4 ">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=1" alt="User" width={48} height={48} />
+                  <Image src="https://i.pravatar.cc/150?u=1" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Sarah Jenkins</h4>
@@ -348,15 +349,15 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "The truffle pasta was absolutely divine! It arrived in 20 minutes, still steaming hot. I don't think I'll ever cook on Fridays again."
+                The truffle pasta was absolutely divine! It arrived in 20 minutes, still steaming hot. I don’t think I will ever cook on Fridays again.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-md border border-orange-200 hover:shadow-2xl transition-all duration-300 lg:scale-105 relative z-10">
-              <div className="absolute top-6 right-8 text-orange-500 text-4xl opacity-20 font-serif">"</div>
+              <div className="absolute top-6 right-8 text-orange-500 text-4xl opacity-20 font-serif"></div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=2" alt="User" />
+                  <Image src="https://i.pravatar.cc/150?u=2" alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Marcus Thorne</h4>
@@ -367,14 +368,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "Fastest delivery I've ever experienced. Usually, 'fast' means cold food, but these guys have mastered the logistics. 10/10!"
+                Fastest delivery I have ever experienced. Usually, fast means cold food, but these guys have mastered the logistics. 10/10!
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=3" alt="User" />
+                  <Image src="https://i.pravatar.cc/150?u=3" alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Elena Rodriguez</h4>
@@ -385,14 +386,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "Finally a delivery service that offers healthy options that actually taste good. The Quinoa Salad bowl is my new daily lunch."
+                Finally a delivery service that offers healthy options that actually taste good. The Quinoa Salad bowl is my new daily lunch.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=4" alt="User" width={48} height={48} />
+                  <Image src="https://i.pravatar.cc/150?u=4" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">David Chen</h4>
@@ -403,14 +404,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "As a software engineer, I live on delivery. This app is by far the smoothest UI/UX I've used. Ordering takes less than 30 seconds."
+                As a software engineer, I live on delivery. This app is by far the smoothest UI/UX I’ve used. Ordering takes less than 30 seconds.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=5" alt="User" width={48} height={48} />
+                  <Image src="https://i.pravatar.cc/150?u=5" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Aisha Khan</h4>
@@ -421,14 +422,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "I ordered for a house party of 15 people. Every single dish was correct, labeled, and hot. Incredible service for large orders!"
+                I ordered for a house party of 15 people. Every single dish was correct, labeled, and hot. Incredible service for large orders!
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=6" alt="User" width={48} height={48} />
+                  <Image src="https://i.pravatar.cc/150?u=6" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">James Wilson</h4>
@@ -439,14 +440,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "The rewards program is actually worth it. I've already earned two free meals just by ordering my usual weekly lunches."
+                The rewards program is actually worth it. I’ve already earned two free meals just by ordering my usual weekly lunches.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=7" alt="User" width={48} height={48} />
+                  <Image src="https://i.pravatar.cc/150?u=7" alt="User" width={48} height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Sofia G.</h4>
@@ -457,14 +458,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "Best sushi delivery in the city. The packaging is premium and the fish is incredibly fresh. Highly recommend the Volcano Roll."
+                Best sushi delivery in the city. The packaging is premium and the fish is incredibly fresh. Highly recommend the Volcano Roll.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=8" alt="User" />
+                  <Image src="https://i.pravatar.cc/150?u=8" alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Robert Vance</h4>
@@ -475,14 +476,14 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "I had an issue with a late rider once, and customer support fixed it in seconds with a full refund and a voucher. That's how you keep customers."
+                I had an issue with a late rider once, and customer support fixed it in seconds with a full refund and a voucher. That is how you keep customers.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <img src="https://i.pravatar.cc/150?u=9" alt="User" />
+                  <Image src="https://i.pravatar.cc/150?u=9" alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Linda Wu</h4>
@@ -493,7 +494,7 @@ export default function HomeClient() {
                 </div>
               </div>
               <p className="text-slate-600 italic leading-relaxed">
-                "The curated 'Healthy Picks' section has made my diet so much easier to stick to. No more searching for calories—it's all right there."
+                The curated Healthy Picks section has made my diet so much easier to stick to. No more searching for calories—it is all right there.
               </p>
             </div>
 
@@ -632,4 +633,4 @@ export default function HomeClient() {
       </div>
     </>
   )
-}
+};

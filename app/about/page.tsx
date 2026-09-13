@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white m-0">
@@ -34,13 +36,14 @@ export default function AboutPage() {
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-orange-200 rounded-full blur-3xl opacity-50" />
 
             <div className="relative h-[500px] w-full rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-              <img
-                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop"
-                alt="Our Kitchen"
-                className="w-full h-full object-cover"
-              />
+            <Image
+              className="w-full h-full object-cover"
+              width={500}
+              height={500}
+              alt="Our Kitchen"
+              src="/images/cooking.jpg"/>
             </div>
-
+             
             <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl hidden md:block border border-gray-50">
               <p className="text-orange-500 font-black text-5xl">14</p>
               <p className="text-slate-700 font-bold uppercase text-xs tracking-tighter">Years of Excellence</p>
@@ -102,24 +105,30 @@ export default function AboutPage() {
               <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-70 animate-pulse" />
               <div className="relative z-10 grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <img
-                    src="images/cooking.jpg"
+                  <Image
+                  width={500}
+                  height={500}
+                    src="/images/cooking.jpg"
                     className="rounded-[2rem] shadow-lg hover:scale-105 transition-transform duration-500"
                     alt="Prepping"
                   />
-                  <img
-                    src="images/cooking2.jpg"
+                  <Image
+                  width={500}
+                  height={500}
+                    src="/images/cooking2.jpg"
                     className="rounded-[2rem] shadow-lg hover:scale-105 transition-transform duration-500"
                     alt="Cooking"
                   />
                 </div>
                 <div className="pt-12 space-y-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=500&auto=format&fit=crop"
+                  <Image
+                  width={500}
+                  height={500}
+                    src="/images/cooking2.jpg"
                     className="rounded-[2rem] shadow-lg hover:scale-105 transition-transform duration-500"
                     alt="Plating"
                   />
-                  <div className="bg-gray-800 rounded-[2rem] p-8 text-white shadow-xl flex flex-col justify-center items-center text-center aspect-square">
+                  <div className="bg-gray-400 rounded-[2rem] p-8 text-white shadow-xl flex flex-col justify-center items-center text-center aspect-square">
                     <span className="text-4xl mb-2">✨</span>
                     <p className="font-bold">Magic in every bite</p>
                   </div>
@@ -185,7 +194,7 @@ export default function AboutPage() {
                   Get the <span className="text-orange-500">Secret Menu</span>
                 </h2>
                 <p className="text-slate-400 text-lg mb-10 max-w-md">
-                  Be the first to know about our "Midnight Specials" and limited-edition dessert drops. No spam, just flavor.
+                  Be the first to know about our Midnight Specials and limited-edition dessert drops. No spam, just flavor.
                 </p>
 
                 <form className="flex flex-col sm:flex-row gap-4">
@@ -221,7 +230,10 @@ export default function AboutPage() {
               </div>
 
               <div className="absolute -bottom-10 -right-10 w-40 h-64 bg-white rounded-3xl shadow-2xl border-4 border-slate-900 rotate-12 flex items-center justify-center overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" alt="App Preview" />
+                <Image
+                width={500}
+                height={500}
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" alt="App Preview" />
               </div>
             </div>
           </div>
@@ -237,15 +249,15 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {[
-                "https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?q=80&w=400&auto=format&fit=crop",
+                "images/cooking2.jpg",
                 "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=400&auto=format&fit=crop",
                 "https://images.unsplash.com/photo-1484723088339-fe2a7a8f1d45?q=80&w=400&auto=format&fit=crop",
                 "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=400&auto=format&fit=crop",
                 "https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=400&auto=format&fit=crop",
                 "https://images.unsplash.com/photo-1476224484767-4c991e09a10e?q=80&w=400&auto=format&fit=crop"
-              ].map((img, i) => (
+              ].map((item, i) => (
                 <div key={i} className="aspect-square rounded-3xl overflow-hidden relative group cursor-pointer">
-                  <img src={img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta Post" />
+                  <Image src={item} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta Post" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="text-white text-2xl">❤️</span>
                   </div>
