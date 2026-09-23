@@ -3,6 +3,7 @@
 import { useCart } from "../context/CardContext";
 import OrderModal from "./OrderModal";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function CartModal({ close }: { close: () => void }) {
   const { cart, removeFromCart, totalPrice } = useCart();
@@ -12,7 +13,7 @@ export default function CartModal({ close }: { close: () => void }) {
   return (
     <>
       
-      <div className="fixed  inset-0 z-[100] flex justify-end bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
+      <div className="fixed  inset-0 z-100 flex justify-end bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
 
         <div className="bg-white w-full max-w-md h-screen shadow-2xl flex flex-col transform transition-all animate-in slide-in-from-right duration-500 ease-out">
 
@@ -25,7 +26,7 @@ export default function CartModal({ close }: { close: () => void }) {
             </button>
           </div>
 
-          <div className="flex-grow overflow-y-auto p-6 space-y-6 custom-scrollbar">
+          <div className="grow overflow-y-auto p-6 space-y-6 custom-scrollbar">
             {cart.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-slate-400 space-y-4">
                 <span className="text-5xl">🛒</span>
@@ -34,11 +35,17 @@ export default function CartModal({ close }: { close: () => void }) {
             ) : (
               cart.map((item) => (
                 <div key={item.id} className="flex gap-4 group animate-in fade-in slide-in-from-bottom-2 duration-300">
-                  <div className="h-20 w-20 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden">
-                    <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                  <div className="h-20 w-20 rounded-lg bg-slate-100 shrink-0 overflow-hidden">
+                    <Image 
+                    src={item.image} 
+                    alt={item.name}
+                    width={80}
+                    height={80}
+                     className="h-full w-full object-cover" 
+                     priority />
                   </div>
 
-                  <div className="flex  justify-between flex-grow">
+                  <div className="flex  justify-between grow">
                     <div>
                       <h3 className="font-semibold text-slate-800">{item.name}</h3>
                       <p className="text-sm text-slate-500">{item.quantity} x ${item.price.toFixed(2)}</p>

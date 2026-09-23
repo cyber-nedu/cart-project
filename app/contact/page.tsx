@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -12,9 +13,13 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-slate-900 ">
         <div className="absolute inset-0 opacity-20">
-          <img
+          <Image
+            priority
+            loading="eager"
+            width={2070}
+            height={1380}
             src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop"
             className="w-full h-full object-cover"
             alt="Contact Background"
@@ -39,11 +44,11 @@ export default function ContactPage() {
           <div className="lg:col-span-1 space-y-6">
             {[
               { title: "Visit Us", detail: "123 Flavor Avenue, Food City, FC 456", icon: "📍", color: "bg-blue-50 text-blue-600" },
-              { title: "Call Us", detail: "+1 (555) 000-FOOD", icon: "📞", color: "bg-green-50 text-green-600" },
-              { title: "Email Us", detail: "hello@foodhub.com", icon: "✉️", color: "bg-orange-50 text-orange-600" },
+              { title: "Call Us", detail: "+234 9129449905", icon: "📞", color: "bg-green-50 text-green-600" },
+              { title: "Email Us", detail: "chinedu.daniel.ernest@gmail.com", icon: "✉️", color: "bg-orange-50 text-orange-600" },
               { title: "Work Hours", detail: "Mon - Sun: 9am - 10pm", icon: "⏰", color: "bg-purple-50 text-purple-600" },
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-50 flex items-center gap-6 group hover:-translate-y-1 transition-all">
+              <div key={i} className="bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-50 flex items-center gap-6 group hover:-translate-y-1 transition-all">
                 <div className={`w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center text-2xl shadow-inner`}>
                   {item.icon}
                 </div>
@@ -78,7 +83,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <h2 className="text-3xl font-black text-slate-900 mb-4">Message Received!</h2>
-                <p className="text-slate-500">We'll get back to you faster than a pizza delivery.</p>
+                <p className="text-slate-500">We will get back to you faster than a pizza delivery.</p>
                 <button onClick={() => setSubmitted(false)} className="mt-8 text-orange-500 font-bold hover:underline">Send another message</button>
               </div>
             ) : (
@@ -94,7 +99,7 @@ export default function ContactPage() {
                         type="text"
                         name="name"
                         required
-                        placeholder=" "
+                        placeholder="First Name "
                         className="peer w-full bg-slate-50 rounded-2xl px-6 pt-6 pb-3 outline-none focus:ring-4 focus:ring-orange-500/10"
                       />
 
@@ -105,7 +110,6 @@ export default function ContactPage() {
                           peer-focus:top-3
                           peer-focus:text-sm"
                       >
-                        Full Name
                       </label>
                     </div>
                     
@@ -114,7 +118,7 @@ export default function ContactPage() {
                         type="text"
                         name="name"
                         required
-                        placeholder=" "
+                        placeholder="Last Name"
                         className="peer w-full bg-slate-50 rounded-2xl px-6 pt-6 pb-3 outline-none focus:ring-4 focus:ring-orange-500/10"
                       />
 
@@ -125,7 +129,6 @@ export default function ContactPage() {
                            peer-focus:top-3
                            peer-focus:text-sm"
                       >
-                        Full Name
                       </label>
                     </div>
                 </div>
@@ -150,7 +153,7 @@ export default function ContactPage() {
                 </button>
               </form>
             )}
-            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-orange-50 rounded-full blur-3xl -z-0" />
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-orange-50 rounded-full blur-3xl z-0" />
           </div>
         </div>
       </section>
@@ -182,16 +185,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="h-[400px] w-full bg-slate-200 relative">
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
-          <div className="text-center">
-            <div className="text-4xl mb-2">📍</div>
-            <p className="font-bold text-slate-400">Interactive Map Loading...</p>
-            <p className="text-xs text-slate-400">123 Flavor Avenue, Food City</p>
-          </div>
-        </div>
-        {/* If you have a Google Maps API Key, you can replace this div with an iframe */}
-      </section>
+     <section className="h-100 w-full overflow-hidden rounded-3xl">
+  <iframe
+    src="https://www.google.com/maps?q=123+Flavor+Avenue,+Food+City&output=embed"
+    className="h-full w-full border-0"
+    loading="lazy"
+    allowFullScreen
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</section>
     </main>
   );
 }

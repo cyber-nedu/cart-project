@@ -73,11 +73,14 @@ export default function HomeClient() {
     }
   `}</style>
 
-              <div className="relative w-full max-w-[500px] aspect-square animate-float">
-                <div className="w-full h-full bg-gradient-to-tr from-orange-200 via-white to-orange-50 rounded-full overflow-hidden shadow-2xl border-[12px] border-white relative group">
+              <div className="relative w-full max-w-125 aspect-square animate-float">
+                <div className="w-full h-full bg-linear-tr from-orange-200 via-white to-orange-50 rounded-full overflow-hidden shadow-2xl border-12 border-white relative group">
                   <Image
                     src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
                     alt="Delicious Bowl"
+                    width= {800}
+                    height= {800}
+                    loading="eager"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
@@ -156,7 +159,7 @@ export default function HomeClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-            <div className="group p-10 rounded-[32px] bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
+            <div className="group p-10 rounded-4xl bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
               <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">
                 🛵
               </div>
@@ -166,7 +169,7 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="group p-10 rounded-[32px] bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
+            <div className="group p-10 rounded-4xl bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
               <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">
                 🌱
               </div>
@@ -176,7 +179,7 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="group p-10 rounded-[32px] bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
+            <div className="group p-10 rounded-4xl bg-slate-50 border border-transparent hover:border-orange-100 hover:bg-white hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 hover:-translate-y-2">
               <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:rotate-6 transition-transform">
                 📱
               </div>
@@ -221,22 +224,22 @@ export default function HomeClient() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="p-8 rounded-[32px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group">
+              <div className="p-8 4xl bg-linear-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group">
                 <p className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-orange-500 transition-colors">12k+</p>
                 <p className="text-slate-400 font-medium uppercase tracking-wider text-xs">Daily Orders</p>
               </div>
 
-              <div className="p-8 rounded-[32px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group translate-y-6">
+              <div className="p-8 4xl bg-linear-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group translate-y-6">
                 <p className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-orange-500 transition-colors">450+</p>
                 <p className="text-slate-400 font-medium uppercase tracking-wider text-xs">Expert Chefs</p>
               </div>
 
-              <div className="p-8 rounded-[32px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group">
+              <div className="p-8 4xl bg-linear-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group">
                 <p className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-orange-500 transition-colors">28+</p>
                 <p className="text-slate-400 font-medium uppercase tracking-wider text-xs">Cities Covered</p>
               </div>
 
-              <div className="p-8 rounded-[32px] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group translate-y-6">
+              <div className="p-8 4xl bg-linear-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm hover:border-orange-500/50 transition-colors group translate-y-6">
                 <p className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-orange-500 transition-colors">99%</p>
                 <p className="text-slate-400 font-medium uppercase tracking-wider text-xs">Positive Reviews</p>
               </div>
@@ -257,7 +260,7 @@ export default function HomeClient() {
           </div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute top-24 left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-dashed bg-slate-200 border-t-2 border-dashed border-slate-200" />
+            <div className="hidden lg:block absolute top-24 left-1/2 -translate-x-1/2 w-2/3 h-0.5 bg-dashed bg-slate-200 border-t-2 border-dashed border-slate-200" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
@@ -323,7 +326,12 @@ export default function HomeClient() {
             <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4,].map((i) => (
-                  <Image key={i} className="w-10 h-10 rounded-full border-2 border-white" src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="User" />
+                  <Image 
+                  key={i}
+                   className="w-10 h-10 rounded-full border-2 border-white"
+                   src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="User"
+                   width={20}
+                   height={20} />
                 ))}
               </div>
               <div className="ml-4">
@@ -335,7 +343,7 @@ export default function HomeClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 group animate-in fadeIn slide-in-from-bottom-4 ">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 group animate-in fadeIn slide-in-from-bottom-4 ">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
                   <Image src="https://i.pravatar.cc/150?u=1" alt="User" width={48} height={48} />
@@ -353,11 +361,15 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-md border border-orange-200 hover:shadow-2xl transition-all duration-300 lg:scale-105 relative z-10">
+            <div className="bg-white p-8 4xl shadow-md border border-orange-200 hover:shadow-2xl transition-all duration-300 lg:scale-105 relative z-10">
               <div className="absolute top-6 right-8 text-orange-500 text-4xl opacity-20 font-serif"></div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <Image src="https://i.pravatar.cc/150?u=2" alt="User" />
+                  <Image 
+                  width={48}
+                  height={48}
+                  src="https://i.pravatar.cc/150?u=2" 
+                  alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Marcus Thorne</h4>
@@ -372,10 +384,14 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <Image src="https://i.pravatar.cc/150?u=3" alt="User" />
+                  <Image 
+                  width={48}
+                  height={48}
+                  src="https://i.pravatar.cc/150?u=3"
+                  alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Elena Rodriguez</h4>
@@ -390,7 +406,7 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
                   <Image src="https://i.pravatar.cc/150?u=4" alt="User" width={48} height={48} />
@@ -408,7 +424,7 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
                   <Image src="https://i.pravatar.cc/150?u=5" alt="User" width={48} height={48} />
@@ -426,10 +442,14 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <Image src="https://i.pravatar.cc/150?u=6" alt="User" width={48} height={48} />
+                  <Image 
+                  src="https://i.pravatar.cc/150?u=6" 
+                  alt="User"
+                   width={48}
+                    height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">James Wilson</h4>
@@ -444,10 +464,14 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <Image src="https://i.pravatar.cc/150?u=7" alt="User" width={48} height={48} />
+                  <Image 
+                  src="https://i.pravatar.cc/150?u=7" 
+                  alt="User" 
+                  width={48} 
+                  height={48} />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Sofia G.</h4>
@@ -462,10 +486,14 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <Image src="https://i.pravatar.cc/150?u=8" alt="User" />
+                  <Image 
+                  width={48}
+                  height={48}
+                  src="https://i.pravatar.cc/150?u=8" 
+                  alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Robert Vance</h4>
@@ -480,10 +508,14 @@ export default function HomeClient() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
+            <div className="bg-white p-8 4xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden ring-2 ring-orange-100">
-                  <Image src="https://i.pravatar.cc/150?u=9" alt="User" />
+                  <Image 
+                  width={48}
+                  height={48}
+                  src="https://i.pravatar.cc/150?u=9" 
+                  alt="User" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Linda Wu</h4>
@@ -527,7 +559,7 @@ export default function HomeClient() {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[32px]">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 4xl">
                 <h3 className="text-xl font-bold text-white mb-2">Subscribe to our Newsletter</h3>
                 <p className="text-slate-400 text-sm mb-6">Weekly recipes, discounts, and food news.</p>
                 <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -568,7 +600,7 @@ export default function HomeClient() {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-grow bg-transparent px-4 py-3 text-white outline-none placeholder:text-slate-500"
+                    className="grow bg-transparent px-4 py-3 text-white outline-none placeholder:text-slate-500"
                     required
                   />
                   <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-xl transition-all active:scale-95 shadow-lg shadow-orange-500/20">

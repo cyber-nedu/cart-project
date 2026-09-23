@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "../../context/CardContext";
+import Image from "next/image";
 
 
 
@@ -451,7 +452,9 @@ export default function Shop() {
             onClick={(e) => e.stopPropagation()}
             className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl animate-scaleIn"
           >
-            <img
+            <Image
+              width={20}
+              height={20}
               src={selectedFood.image}
               alt={selectedFood.name}
               className="w-full h-64 object-cover"
@@ -500,33 +503,35 @@ export default function Shop() {
 
       
       <main className="pb-20 min-h-screen bg-slate-50">
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
+        <section className="relative h-[60vh] flex items-center justify-center bg-slate-900">
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
+              width={20}
+              height={20}
               src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop"
               alt="Hero Background"
               className="object-cover opacity-40 scale-105 animate-[pulse_10s_infinite]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-transparent to-slate-50" />
+            <div className="absolute inset-0 bg-linear-to-b from-slate-900/80 via-transparent to-slate-50" />
           </div>
 
           <div className="absolute top-20 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl animate-bounce [animation-duration:5s]" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-orange-500 uppercase bg-orange-500/10 border border-orange-500/20 rounded-full animate-bounce [animation-duration:3s]">
+            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-orange-500 uppercase bg-orange-500/10 border border-orange-500/20 rounded-full">
               Premium Quality
             </span>
 
             <h1 className="text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-2xl">
-              Our <span className="text-orange-500 inline-block hover:scale-110 transition-transform cursor-default">Food Shop</span>
+              Our <span className="text-orange-500 inline-block transition-transform cursor-default">Food Shop</span>
             </h1>
 
             <p className="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
               Choose from our delicious menu and order your favorite meals
             </p>
 
-            <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 hidden md:block">
+            <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 hidden md:block">
               <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center p-1">
                 <div className="w-1 h-2 bg-orange-500 rounded-full animate-bounce" />
               </div>
@@ -559,8 +564,10 @@ export default function Shop() {
               className="cursor-pointer group bg-white rounded-[2.5rem] p-4 pb-8 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(255,115,0,0.15)] border border-transparent hover:border-orange-100 flex flex-col h-full"
             >
 
-              <div className="relative aspect-square mb-6 overflow-hidden rounded-[2rem] bg-slate-100">
-                <img
+              <div className="relative aspect-square mb-6 overflow-hidden rounded-4xl bg-slate-100">
+                <Image
+                  width={20}
+                  height={20}
                   src={food.image}
                   alt={food.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -577,7 +584,7 @@ export default function Shop() {
                 </div>
               </div>
 
-              <div className="px-2 flex flex-col flex-grow text-center">
+              <div className="px-2 flex flex-col grow text-center">
                 <h3 className="text-xl font-black text-slate-800 mb-1 group-hover:text-orange-500 transition-colors">
                   {food.name}
                 </h3>

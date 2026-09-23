@@ -1,6 +1,7 @@
 "use client";
 
 import { useCart } from "../context/CardContext";
+import Image from "next/image";
 
 
 export default function OrderModal({ close }: { close: () => void }) {
@@ -15,10 +16,15 @@ export default function OrderModal({ close }: { close: () => void }) {
     <>
       <div className="z-50 inset-0 fixed flex items-center justify-center bg-black/40 backdrop-blur-sm animate-in fade-in duration-300 h-screen">
 
-        <div className="relative bg-white w-full max-w-[380px] p-8 rounded-2xl shadow-2xl text-center mx-4 transform transition-all animate-in zoom-in-95 slide-in-from-bottom-4 duration-500 ease-out">
+        <div className="relative bg-white w-full max-w-95 p-8 rounded-2xl shadow-2xl text-center mx-4 transform transition-all animate-in zoom-in-95 slide-in-from-bottom-4 duration-500 ease-out">
 
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
-            <span className="text-3xl animate-bounce"> <img src="/images/confirm.png" alt="" /></span>
+            <span className="text-3xl animate-bounce"> <Image 
+            src="/images/confirm.png" 
+            alt=""
+            width={40}
+            height={40}
+             /></span>
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">

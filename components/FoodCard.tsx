@@ -11,6 +11,8 @@ export default function FoodCard({ food }: { food: { id: number; name: string; p
       <Image
         src={food.image}
         alt={food.name}
+        width={300}
+        height={200}
         className="w-full h-40 object-cover rounded-lg"
       />
       <h3 className="mt-4 text-lg font-semibold">{food.name}</h3>
@@ -19,7 +21,12 @@ export default function FoodCard({ food }: { food: { id: number; name: string; p
         onClick={() => addToCart(food)}
         className="flex items-center justify-center gap-2 w-full bg-orange-400 text-white py-2 rounded-lg hover:bg-orange-500 transition"
       >
-       <Image src="/images/cart.png" alt=" Cart-icon" /> Add to Cart
+       <Image 
+       src="/images/cart.png" 
+       alt=" Cart-icon"
+        width={20}
+        height={20} 
+       /> Add to Cart
       </button>
     </div>
   );

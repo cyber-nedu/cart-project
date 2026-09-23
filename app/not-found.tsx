@@ -29,7 +29,7 @@ export default function NotFound() {
           </h2>
 
           <p className="text-slate-500 text-lg max-w-md mx-auto leading-relaxed">
-            We checked the kitchen and the pantry, but we couldn't find the page you're looking for. It might have been eaten!
+            We checked the kitchen and the pantry, but we couldn’t find the page you’re looking for. It might have been eaten!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">

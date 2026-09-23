@@ -66,7 +66,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
         <p className="text-sm text-slate-400 font-medium">
-          © {new Date().getFullYear()} FoodHub Inc. Built with ❤️ for food lovers.
+          © 2024 - {new Date().getFullYear()} FoodHub Inc. Built with ❤️ for food lovers.
         </p>          <div className="flex gap-8">
             <span className="hover:text-slate-900 cursor-pointer">Privacy</span>
             <span className="hover:text-slate-900 cursor-pointer">Terms</span>

@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const years= new Date().getFullYear() - 2024;
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white m-0">
@@ -35,7 +37,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-orange-200 rounded-full blur-3xl opacity-50" />
 
-            <div className="relative h-[500px] w-full rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="relative h-125 w-full rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
             <Image
               className="w-full h-full object-cover"
               width={500}
@@ -45,7 +47,7 @@ export default function AboutPage() {
             </div>
              
             <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl hidden md:block border border-gray-50">
-              <p className="text-orange-500 font-black text-5xl">14</p>
+              <p className="text-orange-500 font-black text-5xl">0{years}</p>
               <p className="text-slate-700 font-bold uppercase text-xs tracking-tighter">Years of Excellence</p>
             </div>
           </div>
@@ -77,7 +79,7 @@ export default function AboutPage() {
                 icon: "🚚"
               }
             ].map((value, idx) => (
-              <div key={idx} className="bg-white p-10 rounded-[2rem] shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+              <div key={idx} className="bg-white p-10 rounded-4xl shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
                 <div className="text-4xl mb-6 group-hover:scale-125 transition-transform inline-block">{value.icon}</div>
                 <h3 className="text-xl font-bold mb-4 text-slate-900">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.desc}</p>
@@ -109,14 +111,14 @@ export default function AboutPage() {
                   width={500}
                   height={500}
                     src="/images/cooking.jpg"
-                    className="rounded-[2rem] shadow-lg hover:scale-105 transition-transform duration-500"
+                    className="rounded-4xl shadow-lg hover:scale-105 transition-transform duration-500"
                     alt="Prepping"
                   />
                   <Image
                   width={500}
                   height={500}
                     src="/images/cooking2.jpg"
-                    className="rounded-[2rem] shadow-lg hover:scale-105 transition-transform duration-500"
+                    className="rounded-4xl shadow-lg hover:scale-105 transition-transform duration-500"
                     alt="Cooking"
                   />
                 </div>
@@ -125,10 +127,10 @@ export default function AboutPage() {
                   width={500}
                   height={500}
                     src="/images/cooking2.jpg"
-                    className="rounded-[2rem] shadow-lg hover:scale-105 transition-transform duration-500"
+                    className="rounded-4xl shadow-lg hover:scale-105 transition-transform duration-500"
                     alt="Plating"
                   />
-                  <div className="bg-gray-400 rounded-[2rem] p-8 text-white shadow-xl flex flex-col justify-center items-center text-center aspect-square">
+                  <div className="bg-gray-400 rounded-4xl p-8 text-white shadow-xl flex flex-col justify-center items-center text-center aspect-square">
                     <span className="text-4xl mb-2">✨</span>
                     <p className="font-bold">Magic in every bite</p>
                   </div>
@@ -161,7 +163,7 @@ export default function AboutPage() {
                   }
                 ].map((item, index) => (
                   <div key={index} className="flex gap-6 group">
-                    <div className="flex-shrink-0 w-14 h-14 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center text-xl font-black text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <div className="shrink-0 w-14 h-14 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center text-xl font-black text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-sm">
                       {item.step}
                     </div>
                     <div>
@@ -247,23 +249,7 @@ export default function AboutPage() {
               <a href="#" className="text-orange-500 font-bold hover:underline">@FoodHub_Official</a>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {[
-                "images/cooking2.jpg",
-                "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=400&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1484723088339-fe2a7a8f1d45?q=80&w=400&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=400&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=400&auto=format&fit=crop",
-                "https://images.unsplash.com/photo-1476224484767-4c991e09a10e?q=80&w=400&auto=format&fit=crop"
-              ].map((item, i) => (
-                <div key={i} className="aspect-square rounded-3xl overflow-hidden relative group cursor-pointer">
-                  <Image src={item} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta Post" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-white text-2xl">❤️</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            
           </div>
 
         </div>

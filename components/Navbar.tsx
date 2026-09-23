@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-white shadow-md sticky top-0 z-50">
+      <nav className="w-full bg-white shadow-md sticky top-0 z-2">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/">
             <h3 className="text-2xl font-black tracking-tighter text-slate-900">
@@ -100,7 +100,7 @@ export default function Navbar() {
       {emptyCartWarning && (
         <div className=" inset-0 z-2 flex items-center justify-center bg-orange-500 backdrop-blur-md animate-in fade-in duration-300 h-screen">
 
-          <div className="relative bg-white w-full max-w-[340px] p-8 rounded-2xl shadow-2xl text-center mx-4 transform transition-all animate-in zoom-in-95 slide-in-from-bottom-8 duration-500 ease-out">
+          <div className="relative bg-white w-full max-w-85 p-8 rounded-2xl shadow-2xl text-center mx-4 transform transition-all animate-in zoom-in-95 slide-in-from-bottom-8 duration-500 ease-out">
 
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-amber-50">
               <svg
@@ -119,7 +119,7 @@ export default function Navbar() {
             </h2>
 
             <p className="mt-3 text-slate-500 leading-relaxed">
-              Looks like you havent added anything to your bag yet.
+              Looks like you haven’t added anything to your bag yet.
             </p>
 
             <button
